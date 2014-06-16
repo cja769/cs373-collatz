@@ -23,7 +23,7 @@ To document the program
 
 import sys
 
-from cja769-Collatz import collatz_solve
+from Collatz import collatz_solve
 
 # ----
 # main

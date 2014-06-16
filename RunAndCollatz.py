@@ -9,6 +9,8 @@
 # ------------
 # collatz_read
 # ------------
+import sys
+
 
 def collatz_read (r) :
     """
@@ -86,3 +88,4 @@ def collatz_solve (r, w) :
         collatz_print(w, i, j, v)
 
 
+collatz_solve(sys.stdin, sys.stdout)
