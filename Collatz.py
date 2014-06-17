@@ -9,6 +9,8 @@
 # ------------
 # collatz_read
 # ------------
+cache = [0] * 1000000
+cache_len = 1000000
 
 def collatz_read (r) :
     """
@@ -21,6 +23,27 @@ def collatz_read (r) :
         return []
     a = s.split()
     return [int(v) for v in a]
+
+def recursive_execute(n):
+
+    temp = 0
+    odd = 0
+    if n == 1:
+        return 1
+    else:
+        if n < cache_len and cache[n] != 0:
+            return cache[n]
+        if n%2 == 0:
+            temp = recursive_execute(n//2) + 1
+        else:
+            odd = 1
+            temp = recursive_execute((3*n + 1)//2) + 2
+        if n < cache_len:
+            cache[n] = temp
+        odd_case = 3*n +1
+        if odd and odd_case < cache_len:
+            cache[odd_case] = temp-1
+    return temp
 
 # ------------
 # collatz_eval
@@ -36,24 +59,16 @@ def collatz_eval (i, j) :
         temp = i
         i = j
         j = temp
-    current_num = i
-    temp_num = i
-    if (i%2 == 0) and (i != j):
-        current_num += 1
+    base = i
+    if base%2 == 0 and base != j:
+        base += 1
     largest = 0
-    while current_num <= j:
-        temp_num = current_num
-        cycle = 1
-        while temp_num != 1:
-            if temp_num%2 == 0:
-                temp_num = temp_num//2
-                cycle += 1
-            else:
-                temp_num = temp_num + (temp_num >> 1) + 1
-                cycle += 2
+    cycle = 0
+    while base <= j:
+        cycle = recursive_execute(base)
         if cycle > largest:
             largest = cycle
-        current_num += 2
+        base += 2
     return largest
 
 # -------------
