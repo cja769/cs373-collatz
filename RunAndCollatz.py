@@ -70,15 +70,16 @@ def collatz_eval (i, j) :
         i = j
         j = temp
     base = i
-    if base%2 == 0 and base != j: # only figure out the odd numbers
-        base += 1
+    half = j//2
+    if half+1 >= i:
+        base = half+1
     largest = 0
     cycle = 0
     while base <= j:
         cycle = collatz_recursive(base)
         if cycle > largest:
             largest = cycle
-        base += 2 # only do the odd numbers (odd number + 2 is odd)
+        base += 1
     return largest
 
 # -------------
