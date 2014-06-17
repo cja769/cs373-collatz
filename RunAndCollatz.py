@@ -40,6 +40,8 @@ def collatz_eval (i, j) :
         j = temp
     current_num = i
     temp_num = i
+    if (i%2 == 0) and (i != j):
+        current_num += 1
     largest = 0
     while current_num <= j:
         temp_num = current_num
@@ -47,13 +49,14 @@ def collatz_eval (i, j) :
         while temp_num != 1:
             if temp_num%2 == 0:
                 temp_num = temp_num//2
+                cycle += 1
             else:
-                temp_num = 3*temp_num + 1
-            cycle += 1
+                temp_num = temp_num + (temp_num >> 1) + 1
+                cycle += 2
         if cycle > largest:
             largest = cycle
-        current_num += 1
-    return largest;
+        current_num += 2
+    return largest
 
 # -------------
 # collatz_print
