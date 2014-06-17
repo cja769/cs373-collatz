@@ -5,5 +5,11 @@ Worked on: Learning Python and started a little bit on the algorithm
 
 Sunday June, 15th:
 5:30PM-7:00PM, 
-Work time: 1 hr 30 min, 
-Worked on:
+Work time: 1 hr 30 min
+Worked on: Getting all git repos cloned, running code through sphere, and little things here and there
+
+Monday June, 16th:
+11:30AM-1:30PM, 8:30PM-11:45PM
+Work time: 2 hrs, 3hrs 15 min
+Worked on: 1) Non cache to pass to no avail, got cache to pass, and wrote up issues on the tracker. 
+           2) Fixing non cache to pass, improving cache solution, and wrote up and closed more issues on tracker
