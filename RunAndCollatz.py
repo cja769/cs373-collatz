@@ -12,7 +12,6 @@
 import sys
 cache = [0] * 1000000
 cache_len = 1000000
-
 def collatz_read (r) :
     """
     read two ints
@@ -25,20 +24,30 @@ def collatz_read (r) :
     a = s.split()
     return [int(v) for v in a]
 
-def recursive_execute(n):
+# -----------------
+# collatz_recursive
+# -----------------
+
+def collatz_recursive(n):
+    """
+    recursively finds the cycle of n and then stores it in the
+    cache by taking advantage of recursive backtracking
+    n is the current number we're finding the cycle for
+    return an int that represents the cycle of n
+    """
 
     temp = 0
-    odd = 0
+    odd = 0 # if n is odd then we have to fill the cache for index 3n+1 and for n
     if n == 1:
         return 1
     else:
         if n < cache_len and cache[n] != 0:
             return cache[n]
         if n%2 == 0:
-            temp = recursive_execute(n//2) + 1
+            temp = collatz_recursive(n//2) + 1
         else:
             odd = 1
-            temp = recursive_execute((3*n + 1)//2) + 2
+            temp = collatz_recursive((3*n + 1)//2) + 2
         if n < cache_len:
             cache[n] = temp
         odd_case = 3*n +1
@@ -56,22 +65,21 @@ def collatz_eval (i, j) :
     j is the end       of the range, inclusive
     return the max cycle length in the range [i, j]
     """
-    if i > j:
+    if i > j: # we want to make sure that we start at i and end at j
         temp = i
         i = j
         j = temp
     base = i
-    if base%2 == 0 and base != j:
+    if base%2 == 0 and base != j: # only figure out the odd numbers
         base += 1
     largest = 0
     cycle = 0
     while base <= j:
-        cycle = recursive_execute(base)
+        cycle = collatz_recursive(base)
         if cycle > largest:
             largest = cycle
-        base += 2
+        base += 2 # only do the odd numbers (odd number + 2 is odd)
     return largest
-
 
 # -------------
 # collatz_print
