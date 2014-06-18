@@ -9,8 +9,8 @@
 # ------------
 # collatz_read
 # ------------
-cache = [0] * 1000000
-cache_len = 1000000
+cache = [0] * 100000
+cache_len = 100000
 def collatz_read (r) :
     assert(r is not None)
     """
