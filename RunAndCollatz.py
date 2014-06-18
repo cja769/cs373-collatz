@@ -13,6 +13,7 @@ import sys
 cache = [0] * 1000000
 cache_len = 1000000
 def collatz_read (r) :
+    assert(r is not None)
     """
     read two ints
     r is a reader
@@ -35,9 +36,10 @@ def collatz_recursive(n):
     n is the current number we're finding the cycle for
     return an int that represents the cycle of n
     """
-
+    assert (n is not None)
+    assert (n > 0)
     temp = 0
-    odd = 0 # if n is odd then we have to fill the cache for index 3n+1 and for n
+    odd = False # if n is odd then we have to fill the cache for index 3n+1 and for n
     if n == 1:
         return 1
     else:
@@ -46,8 +48,9 @@ def collatz_recursive(n):
         if n%2 == 0:
             temp = collatz_recursive(n//2) + 1
         else:
-            odd = 1
+            odd = True
             temp = collatz_recursive((3*n + 1)//2) + 2
+        assert (temp is not None)
         if n < cache_len:
             cache[n] = temp
         odd_case = 3*n +1
@@ -58,13 +61,14 @@ def collatz_recursive(n):
 # ------------
 # collatz_eval
 # ------------
-
 def collatz_eval (i, j) :
     """
     i is the beginning of the range, inclusive
     j is the end       of the range, inclusive
     return the max cycle length in the range [i, j]
     """
+    assert (i is not None and j is not None)
+    assert (i > 0 and j > 0)
     if i > j: # we want to make sure that we start at i and end at j
         temp = i
         i = j
@@ -76,7 +80,11 @@ def collatz_eval (i, j) :
     largest = 0
     cycle = 0
     while base <= j:
-        cycle = collatz_recursive(base)
+        if base > 1:
+            cycle = collatz_recursive(base)
+        else:
+            cycle = 0
+        assert (cycle is not None and cycle >= 0)
         if cycle > largest:
             largest = cycle
         base += 1
@@ -94,6 +102,7 @@ def collatz_print (w, i, j, v) :
     j is the end       of the range, inclusive
     v is the max cycle length
     """
+    assert(w is not None)
     w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
 
 # -------------
@@ -106,13 +115,15 @@ def collatz_solve (r, w) :
     r is a reader
     w is a writer
     """
+    assert (r is not None and w is not None)
     while True :
         a = collatz_read(r)
         if not a :
             return
         i, j = a
+        assert (i is not None and j is not None)
         v = collatz_eval(i, j)
+        assert (v is not None and v >= 0)
         collatz_print(w, i, j, v)
-
 
 collatz_solve(sys.stdin, sys.stdout)
