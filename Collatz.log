@@ -1,0 +1,107 @@
+commit a146fec583f12f7b93feb96a042410b5a7c033a3
+Author: Calvin <cja769@utexas.edu>
+Date:   Tue Jun 17 21:18:38 2014 -0500
+
+    Collatz.html updated, worklog.txt updated, and TestCollatz.out added
+
+commit 19f7d30bc42a7c251ad187dcb3ab731e8de254cf
+Author: cja769 <cja769@utexas.edu>
+Date:   Tue Jun 17 20:39:16 2014 -0500
+
+    Forgot to add the new html file on the last commit so here it is
+
+commit a1fc96ab2a1b1a7cd319cc6eedb35661fd010351
+Author: cja769 <cja769@utexas.edu>
+Date:   Tue Jun 17 20:37:09 2014 -0500
+
+    Rename RunAndCollatz.py to SphereCollatz.py
+
+commit a7e2e2fa3eff116a3d17123d8280e2be4c185382
+Author: cja769 <cja769@utexas.edu>
+Date:   Tue Jun 17 20:35:08 2014 -0500
+
+    Fixes #18 so that pydoc was ran. Also coverage was ran and the report was saved in TestCollatz.py
+
+commit 47b46bbe6cb535c116bb941ee8a3cc0e38140a2c
+Author: Calvin <cja769@utexas.edu>
+Date:   Tue Jun 17 20:11:21 2014 -0500
+
+    Fixes #16 by reducing the size of the cache from 1,000,000 to 100,000. Time was improved by half a second
+
+commit 8c22b576586985983942b2f706d4401830ac5cc4
+Author: Calvin <cja769@utexas.edu>
+Date:   Tue Jun 17 19:58:06 2014 -0500
+
+    Comments and more asserts added, along with updating TestCollatz.py so that it has 15 tests (5 function * 3 per function
+
+commit 1317d05e6131787b5f537950e34ceffbdd4e7809
+Author: cja769 <cja769@utexas.edu>
+Date:   Tue Jun 17 14:01:17 2014 -0500
+
+    Fixed #15 by changing the range that was actually computed
+
+commit 7ac08c7163ace417f629a3299c404c297aa1181a
+Author: cja769 <cja769@utexas.edu>
+Date:   Tue Jun 17 09:26:39 2014 -0500
+
+    Resloves #13 and fixes #14 by making a python script that makes the tests and then ran them through RunCollatz.py
+
+commit 2bc690c2ad35d2d77b19ec61a3f787674cc3b75c
+Author: cja769 <cja769@utexas.edu>
+Date:   Mon Jun 16 23:51:37 2014 -0500
+
+    Update work_log.txt
+
+commit 46ba2a40981d4bd97ad0d40c664f9356de3c8308
+Author: Calvin <cja769@utexas.edu>
+Date:   Mon Jun 16 23:44:52 2014 -0500
+
+    Renamed the recursive method, changed the code to reflect that change in all places, and added comments
+
+commit 9007e380bb747246367d796b770a7026459f925a
+Author: Calvin <cja769@utexas.edu>
+Date:   Mon Jun 16 22:55:54 2014 -0500
+
+    Fixes #11 so that a cache solution works and it works much faster than the cache-less
+
+commit bace52af30792e13585b447aaef03f97f5a8cce1
+Author: Calvin <cja769@utexas.edu>
+Date:   Mon Jun 16 22:08:23 2014 -0500
+
+    Fixes #10 so that a cache-less solution works
+
+commit 76f36f354b9cfe7bb84f369363c1134d84921194
+Author: Calvin <cja769@utexas.edu>
+Date:   Mon Jun 16 12:17:11 2014 -0500
+
+    RunAndCollatz.py compiles and runs on sphere but exceeds time limit
+
+commit e4badc02a33110868b241e7ed4eacdb888335ca6
+Author: Calvin <cja769@utexas.edu>
+Date:   Mon Jun 16 12:02:25 2014 -0500
+
+    fix names
+
+commit e9289ab3e4f4b8c9a6d8b877f3246ee157e39866
+Author: Calvin <cja769@utexas.edu>
+Date:   Mon Jun 16 11:49:13 2014 -0500
+
+    Added neccessary files
+
+commit b6497bc45f3c4478104b399825477e6f9b184865
+Author: Calvin <cja769@utexas.edu>
+Date:   Sun Jun 15 17:48:40 2014 -0500
+
+    Okay now all logs added
+
+commit a920cc03f2d5b3c9c8d7db7d7a6f6023e00d1ea4
+Author: Calvin <cja769@utexas.edu>
+Date:   Sun Jun 15 17:47:37 2014 -0500
+
+    Logs added
+
+commit 173b9e24d16a8d39db5fd327cbcf6fcd265e2b1c
+Author: Calvin <cja769@utexas.edu>
+Date:   Sun Jun 15 17:38:53 2014 -0500
+
+    first commit
