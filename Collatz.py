@@ -12,12 +12,12 @@
 cache = [0] * 100000
 cache_len = 100000
 def collatz_read (r) :
-    assert(r is not None)
     """
     read two ints
     r is a reader
     return a list of the two ints, otherwise a list of zeros
     """
+    assert(r is not None)
     s = r.readline()
     if s == "" :
         return []

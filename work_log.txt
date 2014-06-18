@@ -13,3 +13,11 @@ Monday June, 16th:
 Work time: 2 hrs, 3hrs 15 min
 Worked on: 1) Non cache to pass to no avail, got cache to pass, and wrote up issues on the tracker. 
            2) Fixing non cache to pass, improving cache solution, and wrote up and closed more issues on tracker
+
+Tuesday June, 17th:
+6:30PM-9:45PM
+Work time: 3hr 15 min
+Worked on: Making solution faster, making unit tests, pydoc, coverage, issues, google doc, and 
+		   commit log
+
+Total time: 12 hrs
